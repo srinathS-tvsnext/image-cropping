@@ -2,10 +2,17 @@
 <div class="col-md-12 col-lg-12">
   <div class="row">
     <div class="col-md-3 col-lg-3">
-      <button mat-raised-button (click)="openInput()" color='primary' style="top:35px">
-        Select File to Upload
-      </button>
-      <input id="fileInput" [hidden]=true type="file" (change)="selectImg($event)" style="display: none">
+      <div>
+          <button mat-raised-button (click)="openInput()" color='primary' style="top:35px">
+              Select File to Upload
+            </button>
+            <input id="fileInput" [hidden]=true type="file" (change)="selectImg($event)" style="display: none">
+      </div>
+      
+      <div>
+          <button mat-raised-button (click)="download()" color="primary" style="top:45px">Download</button>
+      </div>
+      
     </div>
     <div class="col-lg-6 col-md-6">
       <div *ngIf="imgSrc">
@@ -61,28 +68,6 @@
     </tbody>
 
   </table>
-  <!-- 
-  <ul  *ngFor="let area of selectedAreas" [formGroup]="addAreaForm">
-    <li>
-      <mat-form-field class="example-full-width">
-        <input matInput  formControlName='xVal' [value]="area.x">
-      </mat-form-field> {{area.x}}
-    </li>
-    <li>
-        <mat-form-field class="example-full-width">
-            <input matInput  formControlName='yVal' [value]="area.y">
-          </mat-form-field>{{area.y}}
-        </li>
-    <li>
-      <mat-form-field class="example-full-width">
-        <input matInput formControlName='height' [value]="area.height">
-      </mat-form-field>{{area.height}}
-    </li>
-    <li>
-      <mat-form-field class="example-full-width">
-        <input matInput formControlName='width' [value]="area.width">
-      </mat-form-field> {{area.width}}
-    </li>
-  </ul> -->
+ 
 </div>
 <!-- </div> -->

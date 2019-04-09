@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { DomSanitizer } from '@angular/platform-browser';
 declare const $: any;
 
 @Component({
@@ -10,8 +11,9 @@ declare const $: any;
 export class HomecomponentComponent implements OnInit {
   imgSrc;
   selectedAreas;
+  fileUrl
   addAreaForm: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     var ths = this;
@@ -162,7 +164,17 @@ export class HomecomponentComponent implements OnInit {
   areaName(index){
     this.selectedAreas[index].name= this.addAreaForm.controls.name.value
   }
-  save(){
-
+  download(){
+     const data = JSON.stringify(this.selectedAreas);
+     const blob = new Blob([data], { type: 'text/plain' });
+    // this.fileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(window.URL.createObjectURL(blob));
+    // const blob = new Blob([JSON.stringify(this.selectedAreas)], { type: 'text/plain' });
+    // const url= window.URL.createObjectURL(blob);
+    // window.open(url);
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "selectedAreas";
+    // start download
+    a.click();
   }
 }
