@@ -1,0 +1,88 @@
+<!-- <div id="wrapper"> -->
+<div class="col-md-12 col-lg-12">
+  <div class="row">
+    <div class="col-md-3 col-lg-3">
+      <button mat-raised-button (click)="openInput()" color='primary' style="top:35px">
+        Select File to Upload
+      </button>
+      <input id="fileInput" [hidden]=true type="file" (change)="selectImg($event)" style="display: none">
+    </div>
+    <div class="col-lg-6 col-md-6">
+      <div *ngIf="imgSrc">
+        <img [src]="imgSrc" id="example" alt="page error"/>
+      </div>
+    </div>
+  </div>
+  <!--   
+  <div class="image-decorator">
+     <img alt="Image principale" id="example" src="../../assets/images/example.jpg" style="width: 100%;" /> 
+  </div> -->
+  <table [formGroup]="addAreaForm" style="margin-top: 15px;">
+    <!-- <thead>
+        <tr>
+          <th>x</th>
+          <th>y</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>     -->
+    <tbody>
+      <tr *ngFor="let area of selectedAreas;let i=index">
+        <td>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="X" formControlName='xVal' [value]="area.x">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="y" formControlName='yVal' [value]="area.y">
+          </mat-form-field>
+
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="height" formControlName='height' [value]="area.height">
+          </mat-form-field>
+
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="width" formControlName='width' [value]="area.width">
+          </mat-form-field>
+
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Name" formControlName='name' [value]="" (focusout)="areaName(i)">
+          </mat-form-field>
+
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+  <!-- 
+  <ul  *ngFor="let area of selectedAreas" [formGroup]="addAreaForm">
+    <li>
+      <mat-form-field class="example-full-width">
+        <input matInput  formControlName='xVal' [value]="area.x">
+      </mat-form-field> {{area.x}}
+    </li>
+    <li>
+        <mat-form-field class="example-full-width">
+            <input matInput  formControlName='yVal' [value]="area.y">
+          </mat-form-field>{{area.y}}
+        </li>
+    <li>
+      <mat-form-field class="example-full-width">
+        <input matInput formControlName='height' [value]="area.height">
+      </mat-form-field>{{area.height}}
+    </li>
+    <li>
+      <mat-form-field class="example-full-width">
+        <input matInput formControlName='width' [value]="area.width">
+      </mat-form-field> {{area.width}}
+    </li>
+  </ul> -->
+</div>
+<!-- </div> -->
