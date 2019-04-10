@@ -2,6 +2,7 @@
 	background-color: #000;
 	overflow: hidden;
 	position: absolute;
+	opacity: 0.05!important;
 }
 .blurred {
 	filter: url("/filters.svg#blur3px");

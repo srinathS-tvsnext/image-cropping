@@ -49,6 +49,7 @@ export class HomecomponentComponent implements OnInit {
           //   }
           // ]
         });
+        
         $('#btnView').click(function () {
           var areas = $('img#example').selectAreas('areas');
           displayAreas(areas);
