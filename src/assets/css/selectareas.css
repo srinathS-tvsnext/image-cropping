@@ -2,19 +2,20 @@
 	background-color: #000;
 	overflow: hidden;
 	position: absolute;
-	opacity: 0.05!important;
+	opacity: 0!important;
 }
-.blurred {
+/* .blurred {
 	filter: url("/filters.svg#blur3px");
 	-webkit-filter: blur(3px);
 	-moz-filter: blur(3px);
 	-o-filter: blur(3px);
 	filter: blur(3px);
-}
+} */
 
 .select-areas-outline {
-	background: #fff url('outline.gif');
+	background: #ff0000 url('outline.gif');
 	overflow: hidden;
+	opacity: 1.5!important;
 }
 
 .select-areas-resize-handler {
