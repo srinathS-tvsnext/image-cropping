@@ -39,7 +39,7 @@ export class HomecomponentComponent implements OnInit {
         $('img#example').selectAreas({
          // minSize: [10, 10],
           onChanged: debugQtyAreas,
-           width: 500,
+          // width: 500,
           // areas: [
           //   {
           //     x: 10,
@@ -122,6 +122,8 @@ export class HomecomponentComponent implements OnInit {
     // Log the quantity of selections
     function debugQtyAreas(event, id, areas) {
       //() => {
+        let i = id+1;
+        areas[id].name = 'crop'+ i;
         ths.selectedAreas = areas;
        // ths.setAreaVal(areas)
       //}
@@ -162,8 +164,8 @@ export class HomecomponentComponent implements OnInit {
     document.getElementById("fileInput").click();
   }
 
-  areaName(index){
-    this.selectedAreas[index].name= this.addAreaForm.controls.name.value
+  areaName(index,name){
+    this.selectedAreas[index].name= name
   }
   download(){
      const data = JSON.stringify(this.selectedAreas);
