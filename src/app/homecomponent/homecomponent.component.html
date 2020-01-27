@@ -14,9 +14,9 @@
       </div>
       
     </div>
-    <div class="col-lg-6 col-md-6">
-      <div *ngIf="imgSrc">
-        <img [src]="imgSrc" id="example" alt="page error"/>
+    <div class="col-lg-6 col-md-6 bg-border" >
+      <div *ngIf="imgSrc" >
+        <img [src]="imgSrc" id="example" alt="page error" [ngStyle]="{'border':'1px solid grey'}" />
       </div>
     </div>
   </div>
