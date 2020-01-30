@@ -38,12 +38,12 @@
       <tr *ngFor="let area of selectedAreas;let i=index">
         <td>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="X" formControlName='xVal' [value]="area.x">
+            <input matInput placeholder="X" formControlName='xVal' [value]="area.x.toFixed(3)">
           </mat-form-field>
         </td>
         <td>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="y" formControlName='yVal' [value]="area.y">
+            <input matInput placeholder="y" formControlName='yVal' [value]="area.y.toFixed(3)">
           </mat-form-field>
 
         </td>
