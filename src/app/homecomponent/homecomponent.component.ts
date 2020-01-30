@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
+
 declare const $: any;
 
 @Component({
@@ -13,13 +15,18 @@ export class HomecomponentComponent implements OnInit {
   selectedAreas;
   fileUrl
   addAreaForm: FormGroup;
-  constructor(private fb: FormBuilder,private sanitizer: DomSanitizer) { }
+  constructor(private fb: FormBuilder,private sanitizer: DomSanitizer, private route: ActivatedRoute) { }
 
   ngOnInit() {
     var ths = this;
     $.noConflict();
     this.createForm();
-    
+  //   this.route.paramMap.subscribe(imgdata => {
+  //   //  let date = imgdata;
+  //     console.log('route',imgdata); // Print the parameter to the console. 
+  //     this.imgSrc = imgdata['params']['id']
+      
+  // });
   }
   createForm() {
     this.addAreaForm = this.fb.group({
@@ -122,8 +129,8 @@ export class HomecomponentComponent implements OnInit {
     // Log the quantity of selections
     function debugQtyAreas(event, id, areas) {
       //() => {
-        let i = id+1;
-        areas[id].name = 'crop'+ i;
+        // let i = id+1;
+        // areas[id].name = 'crop'+ i;
         ths.selectedAreas = areas;
        // ths.setAreaVal(areas)
       //}
