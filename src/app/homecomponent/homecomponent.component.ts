@@ -21,12 +21,12 @@ export class HomecomponentComponent implements OnInit {
     var ths = this;
     $.noConflict();
     this.createForm();
-  //   this.route.paramMap.subscribe(imgdata => {
-  //   //  let date = imgdata;
-  //     console.log('route',imgdata); // Print the parameter to the console. 
-  //     this.imgSrc = imgdata['params']['id']
+    // this.route.paramMap.subscribe(imgdata => {
+    //  let date = imgdata;
+      // console.log('route',imgdata); // Print the parameter to the console. 
+      // this.imgSrc = imgdata['params']['id']
       
-  // });
+ // });
   }
   createForm() {
     this.addAreaForm = this.fb.group({
@@ -130,7 +130,7 @@ export class HomecomponentComponent implements OnInit {
     function debugQtyAreas(event, id, areas) {
       //() => {
         // let i = id+1;
-        // areas[id].name = 'crop'+ i;
+         areas[id].name = '';
         ths.selectedAreas = areas;
        // ths.setAreaVal(areas)
       //}
@@ -171,8 +171,8 @@ export class HomecomponentComponent implements OnInit {
     document.getElementById("fileInput").click();
   }
 
-  areaName(index,name){
-    this.selectedAreas[index].name= name
+  areaName(index){
+    this.selectedAreas[index].name= this.addAreaForm.controls.name.value;
   }
   download(){
      const data = JSON.stringify(this.selectedAreas);

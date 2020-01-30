@@ -61,7 +61,7 @@
         </td>
         <td>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Name"  (focusout)="areaName(i,area.name)">
+            <input matInput placeholder="Name" formControlName='name'  [value]="area.name" (focusout)="areaName(i)">
           </mat-form-field>
 
         </td>
